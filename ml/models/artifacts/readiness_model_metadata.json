@@ -1,0 +1,38 @@
+{
+  "dataset_path": "data\\raw\\fitness_dataset.csv",
+  "target_column": "readiness_level",
+  "target_source": "derived by ml.preprocessing.preprocess.derive_readiness_level",
+  "feature_columns": [
+    "age",
+    "bmi",
+    "sleep_hours",
+    "steps",
+    "active_minutes",
+    "calories_burned",
+    "workout_frequency",
+    "workout_intensity",
+    "previous_workout_intensity",
+    "fatigue_score",
+    "recovery_score",
+    "fitness_level",
+    "goal",
+    "adherence_rate",
+    "available_workout_minutes"
+  ],
+  "classes": [
+    "High",
+    "Low",
+    "Moderate"
+  ],
+  "training_rows": 250,
+  "model": "DecisionTreeClassifier(max_depth=6, random_state=42)",
+  "leakage_check": {
+    "target_excluded_from_features": true,
+    "target_derived_from": [
+      "sleep_hours",
+      "fatigue_score",
+      "previous_workout_intensity",
+      "recovery_score"
+    ]
+  }
+}
